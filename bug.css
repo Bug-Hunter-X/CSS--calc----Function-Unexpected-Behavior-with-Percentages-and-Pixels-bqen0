@@ -1,0 +1,11 @@
+The following CSS code snippet demonstrates an uncommon error that can occur when using the `calc()` function with percentages and other units.  Specifically, the calculation of `width: calc(50% - 10px);`  might not behave as expected in some contexts:
+
+```css
+div {
+  width: calc(50% - 10px);
+  background-color: lightblue;
+  border: 1px solid black;
+}
+```
+
+The problem arises when the parent element's width is not defined or is too small.  The `calc()` function will attempt to subtract 10px from 50% of the parent's width.  If the resulting calculation yields a negative value, the `width` property will likely be rendered as `0px` or the element might collapse.
